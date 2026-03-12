@@ -1,0 +1,51 @@
+celor plan = 
+calculate (
+    [Plan], 
+    ALL(Calendar1[QuarterOfYear]
+))
+
+Plan = CALCULATE(SUMX(FactSalesPlan,FactSalesPlan[SalesAmountQuota]), 
+FILTER(DimEmployee,DimEmployee[EmployeeKey]))
+
+Plan to today = 
+CALCULATE(
+    [Plan],
+    DATESYTD(Calendar1[Date])
+)
+
+plan_a_cena = [Plan]*[plan_cena]
+
+plan_cena = CALCULATE(SUMX(FactResellerSales,FactResellerSales[UnitPrice]), 
+FILTER(DimEmployee,DimEmployee[EmployeeKey]))
+
+Revenue = SUMX(FactResellerSales, 
+FactResellerSales[UnitPrice] * FactResellerSales[OrderQuantity])
+
+Revenue LY = CALCULATE([Revenue],
+               SAMEPERIODLASTYEAR(Calendar1[Date]) )
+
+Revenue reseller = 
+CALCULATE(
+    SUMX(FactResellerSales, 
+	FactResellerSales[UnitPrice] * FactResellerSales[OrderQuantity]),
+    FILTER(FactResellerSales, FactResellerSales[ResellerKey])
+)
+
+Revenue share of reseller = [Revenue reseller] / CALCULATE([Revenue reseller],
+ALL(DimPartner[ResellerName]))
+
+
+revenue share top 20 = [Revenue reseller] / CALCULATE([Revenue reseller], 
+ALLSELECTED())
+
+Revenue vs Plan = [Revenue] / [Plan] 
+
+Revenue vs Revenue LY = IF([Revenue LY] = 0, BLANK(), 
+[Revenue] / [Revenue LY])
+
+year_plan = CALCULATE(
+    [Plan],
+    ALL(
+        Calendar1[QuarterOfYear]
+    )
+) 
