@@ -1,7 +1,8 @@
 # Power BI – Data Modification, Measures & Data Model
 
 > **Author:** Lesana Beňová
-> **Context:** CSOB Data Quality Dashboard & PBI Academy
+> 
+> **Context:** Personal notes
 
 ## Introduction
 
@@ -206,9 +207,9 @@ A **star schema** is the recommended data model structure in Power BI. It consis
 - **Single direction** filter flow — avoid bidirectional filtering, as it can cause issues with measures.
 
 ```
-Dim_Date
-    |
-    | N : 1
+                  Dim_Date
+                    |
+                    | N : 1
 Dim_Product ——— Fact_Sales ——— Dim_Customer
                     |
                     |
@@ -327,5 +328,3 @@ measure 3 = CALCULATE(
 > **Use case:** When you need a fixed reference value (e.g., total sales for a specific city) regardless of what filters the user applies on the dashboard.
 
 ---
-
-*Generated from internal PBI Academy training notes.*
