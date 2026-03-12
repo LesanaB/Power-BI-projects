@@ -2,6 +2,11 @@
 ## Sales Analytics Dashboard - Complete Measure Reference
 
 ---
+![products](https://github.com/user-attachments/assets/afd79b1d-7aeb-47dc-a2bf-f8d9177bbc93)
+
+---
+![sales](https://github.com/user-attachments/assets/6e947665-5ac0-42db-9dcd-4fa604dda3d1)
+
 
 ## Overview
 This document provides comprehensive documentation for all DAX measures used in the sales analytics model. These measures calculate key performance indicators including revenue, sales plans, and comparative analysis across time periods and business segments.
