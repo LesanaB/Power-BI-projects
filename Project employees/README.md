@@ -2,6 +2,13 @@
 
 ---
 
+![Employees first tasks](https://github.com/user-attachments/assets/95f28eba-4743-4386-9bd7-d88f2c9b2580)
+
+---
+
+![Employees second tasks](https://github.com/user-attachments/assets/da21c471-1c22-4306-b81c-fdd0c0921d21)
+
+
 ## 📅 DATES AND EMPLOYMENT DURATION
 
 ### 1. Earliest Start
